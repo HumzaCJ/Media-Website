@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <title>Media Central</title>
+
+  <link rel="stylesheet" href="static/css/landing.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/png" href="static/images/logofav_128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href="static/images/logofav_128.png"
+  />
+
+ <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://discord.gg/Kuku9XKn7M" />
+    <meta property="og:title" content="Media Central" />
+    <meta property="og:description" content="Rafay and Fozan have big fat smelly woods." />
+    <meta property="og:image" content="https://1000logos.net/wp-content/uploads/2017/12/Pornhub-symbol.jpg" />
+    <meta content="#5c6bf5" data-react-helmet="true" name="theme-color" />
+
+
+
+  <script>
+    window.addEventListener("scroll", function () {
+      console.log("Scrolling");
+    });
+    var scroll =
+      window.requestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+      };
+
+    var elementsToShow = document.querySelectorAll(".show-on-scroll");
+
+    function isElementInViewport(el) {
+      if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+      }
+      var rect = el.getBoundingClientRect();
+      return (
+        (rect.top <= 0 && rect.bottom >= 0) ||
+        (rect.bottom >=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight)) ||
+        (rect.top >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight))
+      );
+    }
+
+    const callback = function (entries) {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-visible");
+      });
+    };
+    const observer = new IntersectionObserver(callback);
+
+    const targets = document.querySelectorAll(".show-on-scroll");
+    targets.forEach(function (target) {
+      observer.observe(target);
+    });
+
+    function loop() {
+      elementsToShow.forEach(function (element) {
+        if (isElementInViewport(element)) {
+          element.classList.add("is-visible");
+        } else {
+          element.classList.remove("is-visible");
+        }
+      });
+
+      scroll(loop);
+    }
+
+    loop();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".faq-1").hover(
+        function () {
+          $(".faq-1").addClass("opened");
+        },
+        function () {
+          $(".faq-1").removeClass("opened");
+        }
+      );
+      $(".faq-2").hover(
+        function () {
+          $(".faq-2").addClass("opened");
+        },
+        function () {
+          $(".faq-2").removeClass("opened");
+        }
+      );
+      $(".faq-3").hover(
+        function () {
+          $(".faq-3").addClass("opened");
+        },
+        function () {
+          $(".faq-3").removeClass("opened");
+        }
+      );
+      $("#toggle").change(function () {
+        if ($(this).is(":checked")) {
+          $("body").addClass("dark-mode");
+        } else {
+          $("body").removeClass("dark-mode");
+        }
+      });
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+    }
+    #root {
+      height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+  </style>
+
+  <body>
+    <div id="root">
+      <span class="turq-circle"></span>
+      <span class="purp-circle"></span>
+      <span class="lpurp-circle"></span>
+      <div id="backblur"></div>
+      <img class="logo" draggable="false" src="static/images/logofav.png" />
+      <div class="menu ht">
+        <a class="fe" href="#features">Features</a>
+        <a class="fa" href="#faq">FAQ</a>
+        <a class="so" href="#socials">Socials</a>
+        <img
+          class="d-h-s"
+          src="static/images/landing/discord.png"
+          draggable="false"
+          onclick="window.open('https://discord.gg/Kuku9XKn7M','_blank')"
+        />
+        <div class="toggle-wrapper">
+          <input type="checkbox" id="toggle" />
+          <label for="toggle"></label>
+        </div>
+      </div>
+
+      <div class="branding">
+        <h1 class="brand">Media Central</h1>
+        <h2 class="slogan">Rafay and Fozan have big fat smelly woods.</h2>
+        <button
+          class="dash"
+          onclick="window.location.href='https://discord.gg/Kuku9XKn7M'"
+          target="_blank"
+        >
+          Join Us
+        </button>
+      </div>
+      <img
+        src="static/images/landing/objects/light-purple.png"
+        class="light-purple OBl"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/blue-high.png"
+        class="blue-high OBr"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/purple-high.png"
+        class="purple-high OBl"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/purple-low.png"
+        class="purple-low OBr"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/blue-low.png"
+        class="blue-low OBl"
+        draggable="false"
+      />
+      <div id="features">
+        <h3 class="features">Features</h3>
+        <h4 class="f-heading">What We Offer</h4>
+        <div class="feat-boxes">
+          <div class="f-1">
+            <p1>Discord Nitro<br /></p1
+            ><p2
+              >Both Classic And Server Boosting</p2
+            >
+          </div>
+          <div class="f-2">
+            <p1>Spotify Premium<br /></p1
+            ><p2
+              >Stream music without ads for lower than Spotify's prices</p2
+            >
+          </div>
+          <div class="f-3">
+            <p1>YouTube Premium<br /></p1
+            ><p2
+              >Watch YouTube without ads at the lowest rate available</p2
+            >
+          </div>
+          <div class="f-4">
+            <p1>Netflix<br /></p1
+            ><p2
+              >Stream thousands of movies at almost no cost</p2
+            >
+          </div>
+        </div>
+      </div>
+      <div id="backblur-2"></div>
+      <div id="faq">
+        <h3 class="faq">Frequently Asked Questions</h3>
+        <h4 class="faq-heading">Have Any Questions?</h4>
+        <div class="faq-boxes">
+          <div class="faq-1">
+            <a1>We will replace products if they get cancelled as soon as possible, relative to the price you've paid.</a1>
+            <q1 class="q1">Do You Do Replacements?</q1>
+          </div>
+          <div class="faq-2">
+            <a1
+              >This is not illegal at all. We create the accounts ourselves using our exclusive methods to get them at the lowest prices available.</a1
+            >
+            <q1 class="q2">Is This Illegal?</q1>
+          </div>
+          <div class="faq-3">
+            <a1
+              >We fulfill orders almost immediately after payment to ensure a smooth process for you and for us.</a1
+            >
+            <q1 class="q3">How Long Do I Have To Wait?</q1>
+          </div>
+        </div>
+      </div>
+      <img
+        src="static/images/landing/objects/light-purple.png"
+        class="light-purple2 OBr2"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/blue-high.png"
+        class="blue-high2 OBr2"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/purple-high.png"
+        class="purple-high2 OBl2"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/purple-low.png"
+        class="purple-low2 OBr2"
+        draggable="false"
+      />
+      <img
+        src="static/images/landing/objects/blue-low.png"
+        class="blue-low2 OBl2"
+        draggable="false"
+      />
+      <div id="socials">
+        <h4 class="socials">Contact</h4>
+        <div class="social-boxes">
+          <button
+            class="twitter-button bp2"
+            onclick="window.open('https://twitter.com/HumzaCJ','_blank')"
+          >
+            Twitter
+          </button>
+          <button
+            class="discord-button bp2"
+            onclick="window.open('https://discord.gg/Kuku9XKn7M','_blank')"
+          >
+            Discord Server
+          </button>
+        </div>
+      </div>
+      <p class="rights">© 2023 Media Central LLC | All Rights Reserved</p>
+      <div class="discord-footer">
+        <img
+          src="static/images/landing/discord2.png"
+          draggable="false"
+          class="d2"
+        />
+      </div>
+      <div class="twitter-footer">
+        <img
+          src="static/images/landing/twitter.png"
+          draggable="false"
+          class="tw"
+        />
+      </div>
+    </div>
+  </body>
+</html>
